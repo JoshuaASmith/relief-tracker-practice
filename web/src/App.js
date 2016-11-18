@@ -8,9 +8,9 @@ const App = React.createClass({
         return (
             <BrowserRouter>
                 <div>
-                    <h1>Hello World</h1>
-                    <Link to="/about">About</Link>
-                    <Match/>
+
+                    <Match excactly pattern="/" component={Home}/>
+                    <Match pattern="/about" component={About}/>
 
                 </div>
             </BrowserRouter>
