@@ -1,11 +1,30 @@
 const React = require('react')
 const {Link} = require('react-router')
+const xhr = require('xhr')
 
 const Efforts = React.createClass({
+    getInitialState() {
+        return {efforts: []}
+    },
+    componentDidMount() {
+        xhr.get('http://localhost:4000/persons', {
+            json: true
+        }, (err, response, efforts) => {
+            if (err)
+                return console.log(err.message)
+            this.setState({efforts})
+        })
+    },
     render() {
+        const listEffort = effort => {
+            return <li key={effort.id}>
+                <Link to={`/efforts/${effort.id}/show`}>{effort.name}</Link>
+            </li>
+        }
         return (
             <div>
                 <h3>Efforts</h3>
+                {this.state.efforts.map(listEffort)}
                 <Link to="/">Home</Link>
             </div>
         )

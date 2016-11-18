@@ -4,14 +4,7 @@ const xhr = require('xhr')
 
 const Persons = React.createClass({
     getInitialState() {
-        return {
-            persons: [
-                {
-                    firstName: 'Bob',
-                    lastName: 'Marley'
-                }
-            ]
-        }
+        return {persons: []}
     },
     componentDidMount() {
         xhr.get('http://localhost:4000/persons', {
@@ -23,7 +16,11 @@ const Persons = React.createClass({
         })
     },
     render() {
-        const listPerson = person => <li>{person.firstName + ' ' + person.lastName}</li>
+        const listPerson = person => {
+            return <li key={person.id}>
+                <Link to={`/persons/${person.id}/show`}>{person.firstName + ' ' + person.lastName}</Link>
+            </li>
+        }
         return (
             <div>
                 <h3>Persons List Here</h3>
