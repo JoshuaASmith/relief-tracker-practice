@@ -1,5 +1,8 @@
 {
-  "persons": [],
+  "persons": [{
+    "firstName": "Bob",
+    "lastName": "Marley"
+    }],
   "efforts": [],
   "locations": []
 }
