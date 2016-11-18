@@ -8,6 +8,7 @@ const Locations = require('./pages/locations/')
 const ShowPerson = require('./pages/persons/show')
 const PersonForm = require('./pages/persons/form')
 const ShowEffort = require('./pages/efforts/show')
+const Service = require('./components/service')
 
 const NoMatch = () => (
     <div>
@@ -23,8 +24,8 @@ const App = React.createClass({
                 <div>
                     <Match exactly pattern="/" component={Home}/>
                     <Match pattern="/about" component={About}/>
-                    <Match exactly pattern="/persons" component={Persons}/>
-                    <Match pattern="/persons/:id/show" component={ShowPerson}/>
+                    <Match exactly pattern="/persons" component={Service(Persons)}/>
+                    <Match pattern="/persons/:id/show" component={Service(ShowPerson)}/>
                     <Match exactly pattern="/persons/new" component={PersonForm}/>
                     <Match pattern="/persons/:id/edit" component={PersonForm}/>
                     <Match pattern="/efforts" component={Efforts}/>
