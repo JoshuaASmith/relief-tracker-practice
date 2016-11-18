@@ -22,8 +22,8 @@ const Persons = React.createClass({
             </li>
         }
         return (
-            <div>
-                <h3>Persons List Here</h3>
+            <div className="avenir fw1 pl3">
+                <h3 className="fw1 f2">Persons List Here</h3>
                 <Link to="/persons/new">New Person</Link>
                 <ul>
                     {this.state.persons.map(listPerson)}

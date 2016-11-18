@@ -22,33 +22,9 @@
       "firstName": "Matt",
       "lastName": "Berninger",
       "email": "american_mary@4ad.com",
-      "phone": "4340260356",
+      "phone": "307-222-7745",
       "success": false,
-      "id": "4"
-    },
-    {
-      "firstName": "Joshua",
-      "lastName": "Smith",
-      "email": "Joshua.Aaron.Smith17@email.com",
-      "phone": "304-245-7543",
-      "success": false,
-      "id": 5
-    },
-    {
-      "firstName": "a",
-      "lastName": "a",
-      "email": "a@b.com",
-      "phone": "23498345",
-      "success": false,
-      "id": 6
-    },
-    {
-      "firstName": "b",
-      "lastName": "b",
-      "email": "b@c.com",
-      "phone": "297898945",
-      "success": false,
-      "id": 7
+      "id": "rks8e1pbe"
     }
   ],
   "efforts": [],

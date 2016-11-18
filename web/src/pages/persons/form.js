@@ -75,10 +75,10 @@ const PersonForm = React.createClass({
                         <input onChange={this.handleChange('phone')} value={this.state.phone} type="text" placeholder="555-555-5555"/>
                     </div>
                     <div>
-                        <button className="mt2 mb3">Add Person</button>
+                        <button className="mt2 mb3 f6 link dim br2 ba ph4 pv2 mb2 dib black ml2">Save Person</button>
                     </div>
                 </form>
-                <Link className="" to="/persons">Return</Link>
+                <Link className="ml4" to="/persons">Return</Link>
             </div>
         )
     }
