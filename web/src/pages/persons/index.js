@@ -24,6 +24,7 @@ const Persons = React.createClass({
         return (
             <div>
                 <h3>Persons List Here</h3>
+                <Link to="/persons/new">New Person</Link>
                 <ul>
                     {this.state.persons.map(listPerson)}
                 </ul>
