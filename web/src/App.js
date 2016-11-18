@@ -26,6 +26,7 @@ const App = React.createClass({
                     <Match exactly pattern="/persons" component={Persons}/>
                     <Match pattern="/persons/:id/show" component={ShowPerson}/>
                     <Match exactly pattern="/persons/new" component={PersonForm}/>
+                    <Match pattern="/persons/:id/edit" component={PersonForm}/>
                     <Match pattern="/efforts" component={Efforts}/>
                     <Match pattern="/efforts/:id/show" component={ShowEffort}/>
                     <Match pattern="/locations" component={Locations}/>

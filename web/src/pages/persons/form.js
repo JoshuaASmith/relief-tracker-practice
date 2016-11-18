@@ -15,22 +15,47 @@ const PersonForm = React.createClass({
     },
     handleSubmit(e) {
         e.preventDefault()
-        xhr.post('http://localhost:4000/persons', {
-            json: this.state
-        }, (err, response, body) => {
-            if (err)
-                return console.log(err.message)
-            this.setState({success: true})
-            console.log(body)
-        })
+        if (this.state.id) {
+            xhr.put('http://localhost:4000/persons/' + this.state.id, {
+                json: this.state
+            }, (err, response, body) => {
+                if (err)
+                    return console.log(err.message)
+                this.setState({success: true})
+                console.log(body)
+            })
+        } else {
+            xhr.post('http://localhost:4000/persons', {
+                json: this.state
+            }, (err, response, body) => {
+                if (err)
+                    return console.log(err.message)
+                this.setState({success: true})
+                console.log(body)
+            })
+        }
+    },
+    componentDidMount() {
+        if (this.props.params.id) {
+            xhr.get('http://localhost:4000/persons/' + this.props.params.id, {
+                json: true
+            }, (err, response, person) => {
+                if (err)
+                    return console.log(err.message)
+                this.setState(person)
+            })
+        }
     },
     render() {
         return (
             <div className="avenir fw2 pl3">
-                {this.state.success
-                    ? <Redirect to="/persons"/>
+                {this.state.success && this.state.id
+                    ? <Redirect to={`/persons/${this.state.id}/show`}/>
                     : null}
-                <h3 className="f1 fw1">Add Person</h3>
+                {this.state.success && !this.state.id
+                    ? <Redirect to={`/persons`}/>
+                    : null}
+                <h3 className="f1 fw1">Add/Edit Person</h3>
                 <hr/>
                 <form onSubmit={this.handleSubmit}>
                     <div>

@@ -17,8 +17,9 @@ const ShowPerson = React.createClass({
     },
     render() {
         return (
-            <div>
+            <div className="">
                 <h4>{this.state.person.firstName + ' ' + this.state.person.lastName}</h4>
+                <Link className="db" to={`/persons/${this.state.person.id}/edit`}>Edit Person</Link>
                 <Link to="/persons">Return</Link>
             </div>
         )
