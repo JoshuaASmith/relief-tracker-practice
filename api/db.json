@@ -14,11 +14,62 @@
       "firstName": "Matt",
       "lastName": "Berninger",
       "email": "american_mary@4ad.com",
-      "phone": "307-222-7745",
+      "phone": "307-222-7777",
       "success": false,
       "id": "rks8e1pbe"
+    },
+    {
+      "firstName": "test",
+      "lastName": "person",
+      "email": "test@gmail.com",
+      "phone": "4843932020",
+      "success": false,
+      "id": 3
     }
   ],
-  "efforts": [],
-  "locations": []
+  "efforts": [
+    {
+      "id": 1,
+      "name": "Ecuador 2008",
+      "organizationID": "Boyd Avenue",
+      "desc": "A trip to Ecuador",
+      "phase": "completed",
+      "start": "2008-06-10",
+      "end": "2008-06/20"
+    },
+    {
+      "id": 2,
+      "name": "Haiti 2016",
+      "organizationID": "Seacost",
+      "desc": "A trip to Haiti for Hurricane recovery.",
+      "phase": "in-progress",
+      "start": "2016-11-18",
+      "end": "2016-12-02"
+    },
+    {
+      "id": 3,
+      "name": "Laos 2017",
+      "organizationID": "Parkway",
+      "desc": "A trip to Laos.",
+      "phase": "started",
+      "start": "2017-04-05",
+      "end": "2017-04-20"
+    }
+  ],
+  "locations": [{
+    "id": 1,
+    "name": "Ecuador",
+    "lat": "0.1807° S",
+    "lng": "78.4678° W"
+    }, {
+      "id": 2,
+      "name": "Haiti",
+      "lat": "18.9712° N",
+      "lng": "72.2852° W"
+      }, {
+        "id": 3,
+        "name": "Laos",
+        "lat": "17.9757° N",
+        "lng": "102.6331° E"
+        }]
 }

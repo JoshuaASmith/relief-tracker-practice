@@ -1,6 +1,6 @@
 const React = require('react')
 const {Link, Redirect} = require('react-router')
-const xhr = require('xhr')
+//const xhr = require('xhr')
 
 const ShowPerson = React.createClass({
     getInitialState() {
@@ -44,8 +44,8 @@ const ShowPerson = React.createClass({
                     ? <Redirect to="/persons"/>
                     : null}
                 <h3 className="fw1 f3">{this.state.person.firstName + ' ' + this.state.person.lastName}</h3>
-                <h5 className="fw1">Email:{this.state.person.email}</h5>
-                <h5 className="fw1">Phone:{this.state.person.phone}</h5>
+                <h5 className="fw1">Email: {this.state.person.email}</h5>
+                <h5 className="fw1">Phone: {this.state.person.phone}</h5>
                 <Link className="db pb2" to={`/persons/${this.state.person.id}/edit`}>Edit Person</Link>
                 <button className="f6 fw1 link dim br2 ba ph3 pv2 mb2 db black" onClick={this.handleRemove}>Remove Person</button>
                 <Link to="/persons">Return</Link>

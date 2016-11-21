@@ -3,11 +3,14 @@ const {BrowserRouter, Match, Miss, Link} = require('react-router')
 const Home = require('./pages/home')
 const About = require('./pages/about')
 const Persons = require('./pages/persons/')
-const Efforts = require('./pages/efforts/')
-const Locations = require('./pages/locations/')
 const ShowPerson = require('./pages/persons/show')
 const PersonForm = require('./pages/persons/form')
+const Efforts = require('./pages/efforts/')
 const ShowEffort = require('./pages/efforts/show')
+const EffortForm = require('./pages/efforts/form')
+const Locations = require('./pages/locations/')
+const ShowLocation = require('./pages/locations/show')
+const LocationForm = require('./pages/locations/form')
 const Service = require('./components/service')
 
 const NoMatch = () => (
@@ -28,9 +31,14 @@ const App = React.createClass({
                     <Match pattern="/persons/:id/show" component={Service(ShowPerson)}/>
                     <Match exactly pattern="/persons/new" component={PersonForm}/>
                     <Match pattern="/persons/:id/edit" component={PersonForm}/>
-                    <Match pattern="/efforts" component={Efforts}/>
+                    <Match exactly pattern="/efforts" component={Efforts}/>
                     <Match pattern="/efforts/:id/show" component={ShowEffort}/>
-                    <Match pattern="/locations" component={Locations}/>
+                    <Match exactly pattern="/efforts/new" component={EffortForm}/>
+                    <Match pattern="/efforts/:id/edit" component={EffortForm}/>
+                    <Match exactly pattern="/locations" component={Locations}/>
+                    <Match pattern="/locations/:id/show" component={ShowLocation}/>
+                    <Match exactly pattern="/locations/new" component={LocationForm}/>
+                    <Match pattern="/locations/:id/edit" component={LocationForm}/>
                     <Miss component={NoMatch}/>
                 </div>
             </BrowserRouter>

@@ -47,6 +47,9 @@ const PersonForm = React.createClass({
         }
     },
     render() {
+        const formState = this.state.id
+            ? 'Edit'
+            : 'New'
         return (
             <div className="avenir fw2 pl3">
                 {this.state.success && this.state.id
@@ -55,7 +58,8 @@ const PersonForm = React.createClass({
                 {this.state.success && !this.state.id
                     ? <Redirect to={`/persons`}/>
                     : null}
-                <h3 className="f1 fw1">Add/Edit Person</h3>
+                <h3 className="f1 fw1">{formState + ' '}
+                    Person</h3>
                 <hr/>
                 <form onSubmit={this.handleSubmit}>
                     <div>
@@ -78,7 +82,7 @@ const PersonForm = React.createClass({
                         <button className="mt2 mb3 f6 link dim br2 ba ph4 pv2 mb2 dib black ml2">Save Person</button>
                     </div>
                 </form>
-                <Link className="ml4" to="/persons">Return</Link>
+                <Link className="no-underline black hover-bg-moon-gray ml4 mb4" to="/persons">Return</Link>
             </div>
         )
     }

@@ -7,7 +7,7 @@ const Efforts = React.createClass({
         return {efforts: []}
     },
     componentDidMount() {
-        xhr.get('http://localhost:4000/persons', {
+        xhr.get('http://localhost:4000/efforts', {
             json: true
         }, (err, response, efforts) => {
             if (err)
@@ -18,14 +18,21 @@ const Efforts = React.createClass({
     render() {
         const listEffort = effort => {
             return <li key={effort.id}>
-                <Link to={`/efforts/${effort.id}/show`}>{effort.name}</Link>
+                <Link className="no-underline black hover-bg-moon-gray" to={`/efforts/${effort.id}/show`}>{effort.name}</Link>
             </li>
         }
         return (
-            <div>
-                <h3>Efforts</h3>
-                {this.state.efforts.map(listEffort)}
-                <Link to="/">Home</Link>
+            <div className="avenir fw1 pl3">
+                <h3 className=" f2 fw1">Efforts</h3>
+                <ul>
+                    {this.state.efforts.map(listEffort)}
+                </ul>
+                <div>
+                    <Link className="f3 no-underline black hover-bg-moon-gray mb3 mv2" to="/efforts/new">New Effort</Link>
+                </div>
+                <div>
+                    <Link className="no-underline black hover-bg-moon-gray" to="/">Home</Link>
+                </div>
             </div>
         )
     }
