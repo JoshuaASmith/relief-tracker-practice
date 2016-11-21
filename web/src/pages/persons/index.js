@@ -21,19 +21,17 @@ const Persons = React.createClass({
     },
     render() {
         const listPerson = person => {
-            return <li key={person.id}>
+            return <li className="list" key={person.id}>
                 <Link className="no-underline black hover-bg-moon-gray" to={`/persons/${person.id}/show`}>{person.firstName + ' ' + person.lastName}</Link>
             </li>
         }
         return (
-            <div className="avenir fw1 pl3">
+            <div className="avenir fw1 tc">
                 <h3 className="fw1 f2">Persons List</h3>
-                <blockquote className="ml0 mt0 pl4 black-90 bl bw2 b--dark-blue">
-                    <ul>
-                        {this.state.persons.map(listPerson)}
-                    </ul>
+                <blockquote className="w-40 center black-90 bl bw2 b--dark-blue mb2">
+                    {this.state.persons.map(listPerson)}
                 </blockquote>
-                <div>
+                <div className="mt3">
                     <Link className="f3 no-underline black hover-bg-moon-gray mb3" to="/persons/new">New Person</Link>
                 </div>
                 <div className="mt3">

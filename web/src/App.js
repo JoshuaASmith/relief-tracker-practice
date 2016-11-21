@@ -27,7 +27,7 @@ const App = React.createClass({
                 <div>
                     <div className="avenir">
                         <header>
-                            <nav className="pa3 pa4-ns bb bg-light-gray">
+                            <nav className="pa3 pa4-ns bb bg-light-gray tc">
                                 <Link className="link dim black b f4 f5-ns dib mr3" to="/" title="Home-Relief Tracker">Relief Tracker</Link>
                                 <Link className="link dim gray    f6 f5-ns dib mr3" to="/about" title="About">About</Link>
                                 <Link className="link dim gray    f6 f5-ns dib mr3" to="/persons" title="Persons">Persons</Link>

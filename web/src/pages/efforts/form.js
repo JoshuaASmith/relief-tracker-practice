@@ -59,7 +59,7 @@ const EffortForm = React.createClass({
             ? 'Edit'
             : 'New'
         return (
-            <div className="avenir fw2 pl3">
+            <div className="avenir fw2 tc">
                 {this.state.success && this.state.id
                     ? <Redirect to={`/efforts/${this.state.id}/show`}/>
                     : null}
@@ -83,7 +83,11 @@ const EffortForm = React.createClass({
                     </div>
                     <div>
                         <label className="db pt2">Phase</label>
-                        <input onChange={this.handleChange('phase')} value={this.state.phase} type="text" placeholder="Started, In Progress, or Completed"/>
+                        <select onChange={this.handleChange('phase')} value={this.state.phase} type="text" placeholder=" ">
+                            <option value="in-planning">in-planning</option>
+                            <option value="completed">Completed</option>
+                            <option value="started">Started</option>
+                        </select>
                     </div>
                     <div>
                         <label className="db pt2">Start</label>
@@ -98,7 +102,7 @@ const EffortForm = React.createClass({
                     </div>
                 </form>
                 <div className="ml2">
-                    <Link className="no-underline black hover-bg-moon-gray ml4 mb4" to="/efforts">Return</Link>
+                    <Link className="no-underline black hover-bg-moon-gray mb4" to="/efforts">Return</Link>
                 </div>
             </div>
         )

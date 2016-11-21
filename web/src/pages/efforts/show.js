@@ -34,16 +34,21 @@ const ShowEffort = React.createClass({
     },
     render() {
         return (
-            <div className="avenir fw1 pl3">
+            <div className="avenir fw1 tc">
                 {this.state.removed
                     ? <Redirect to="/efforts"/>
                     : null}
-                <h5 className="fw1 f3">{this.state.effort.name}</h5>
-                <h5 className="fw1">{this.state.effort.organizationID}</h5>
-                <h5 className="fw1">{this.state.effort.desc}</h5>
-                <Link className="db pb2" to={`/efforts/${this.state.effort.id}/edit`}>Edit Effort</Link>
-                <button className="f6 fw1 link dim br2 ba ph3 pv2 mb2 db black" onClick={this.handleRemove}>Remove Effort</button>
-                <Link to="/efforts">Return</Link>
+                <h3 className="fw1 f2 tc">Effort</h3>
+                <hr className="w-50 tl"/>
+                <div>
+                    <h5 className="fw1 f3">{this.state.effort.name}</h5>
+                    <h5 className="fw1">{this.state.effort.organizationID}</h5>
+                    <h5 className="fw1">{this.state.effort.desc}</h5>
+                </div>
+                <hr className="w-10"/>
+                <Link className="no-underline black hover-bg-moon-gray" to={`/efforts/${this.state.effort.id}/edit`}>Edit Effort</Link>
+                <button className="f6 fw1 link dim br2 ba ph3 pv2 mt2 mb2 db black center" onClick={this.handleRemove}>Remove Effort</button>
+                <Link className="no-underline black hover-bg-moon-gray" to="/efforts">Return</Link>
             </div>
         )
     }

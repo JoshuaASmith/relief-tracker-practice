@@ -17,19 +17,17 @@ const Efforts = React.createClass({
     },
     render() {
         const listEffort = effort => {
-            return <li key={effort.id}>
+            return <li className="list" key={effort.id}>
                 <Link className="no-underline black hover-bg-moon-gray" to={`/efforts/${effort.id}/show`}>{effort.name}</Link>
             </li>
         }
         return (
-            <div className="avenir fw1 pl3">
-                <h3 className=" f2 fw1">Efforts</h3>
-                <blockquote className="ml0 mt0 pl4 black-90 bl bw2 b--dark-blue">
-                    <ul>
-                        {this.state.efforts.map(listEffort)}
-                    </ul>
+            <div className="avenir fw1 tc">
+                <h3 className="f2 fw1">Efforts</h3>
+                <blockquote className="w-40 center black-90 bl bw2 b--dark-blue mb2">
+                    {this.state.efforts.map(listEffort)}
                 </blockquote>
-                <div>
+                <div className="mt3">
                     <Link className="f3 no-underline black hover-bg-moon-gray mb3 mv2" to="/efforts/new">New Effort</Link>
                 </div>
                 <div className="mt3">

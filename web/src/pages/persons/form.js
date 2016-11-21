@@ -51,7 +51,7 @@ const PersonForm = React.createClass({
             ? 'Edit'
             : 'New'
         return (
-            <div className="avenir fw2 pl3">
+            <div className="avenir fw2 tc">
                 {this.state.success && this.state.id
                     ? <Redirect to={`/persons/${this.state.id}/show`}/>
                     : null}
@@ -82,7 +82,7 @@ const PersonForm = React.createClass({
                         <button className="mt2 mb3 f6 link dim br2 ba ph4 pv2 mb2 dib black ml2">Save Person</button>
                     </div>
                 </form>
-                <Link className="no-underline black hover-bg-moon-gray ml4 mb4" to="/persons">Return</Link>
+                <Link className="no-underline black hover-bg-moon-gray mb4" to="/persons">Return</Link>
             </div>
         )
     }

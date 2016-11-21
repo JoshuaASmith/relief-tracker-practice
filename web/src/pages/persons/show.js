@@ -39,16 +39,21 @@ const ShowPerson = React.createClass({
     },
     render() {
         return (
-            <div className="avenir fw1 pl3">
+            <div className="avenir fw1 tc">
                 {this.state.removed
                     ? <Redirect to="/persons"/>
                     : null}
-                <h3 className="fw1 f3">{this.state.person.firstName + ' ' + this.state.person.lastName}</h3>
-                <h5 className="fw1">Email: {this.state.person.email}</h5>
-                <h5 className="fw1">Phone: {this.state.person.phone}</h5>
-                <Link className="db pb2" to={`/persons/${this.state.person.id}/edit`}>Edit Person</Link>
-                <button className="f6 fw1 link dim br2 ba ph3 pv2 mb2 db black" onClick={this.handleRemove}>Remove Person</button>
-                <Link to="/persons">Return</Link>
+                <h3 className="fw1 f2 tc">Location</h3>
+                <hr className="w-50 tl"/>
+                <div>
+                    <h3 className="fw1 f3">{this.state.person.firstName + ' ' + this.state.person.lastName}</h3>
+                    <h5 className="fw1">Email: {this.state.person.email}</h5>
+                    <h5 className="fw1">Phone: {this.state.person.phone}</h5>
+                </div>
+                <hr className="w-10"/>
+                <Link className="no-underline black hover-bg-moon-gray" to={`/persons/${this.state.person.id}/edit`}>Edit Person</Link>
+                <button className="f6 fw1 link dim br2 ba ph3 pv2 mt2 mb2 db black center" onClick={this.handleRemove}>Remove Person</button>
+                <Link className="no-underline black hover-bg-moon-gray" to="/persons">Return</Link>
             </div>
         )
     }
