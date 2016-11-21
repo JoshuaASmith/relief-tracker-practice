@@ -28,10 +28,11 @@ const Persons = React.createClass({
         return (
             <div className="avenir fw1 pl3">
                 <h3 className="fw1 f2">Persons List</h3>
-
-                <ul>
-                    {this.state.persons.map(listPerson)}
-                </ul>
+                <blockquote className="ml0 mt0 pl4 black-90 bl bw2 b--dark-blue">
+                    <ul>
+                        {this.state.persons.map(listPerson)}
+                    </ul>
+                </blockquote>
                 <div>
                     <Link className="f3 no-underline black hover-bg-moon-gray mb3" to="/persons/new">New Person</Link>
                 </div>

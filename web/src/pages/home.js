@@ -5,7 +5,6 @@ const Home = React.createClass({
     render() {
         return (
             <div className="avenir fw1 pl3">
-                <h1 className="fw1">Homepage</h1>
                 <h3 className="fw1 f2 no-underline">Menu</h3>
                 <ul className="pv1">
                     <li className="pv1">
