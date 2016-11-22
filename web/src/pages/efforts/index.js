@@ -24,9 +24,12 @@ const Efforts = React.createClass({
         return (
             <div className="avenir fw1 tc">
                 <h3 className="f2 fw1">Efforts</h3>
-                <blockquote className="w-40 center black-90 bl bw2 b--dark-blue mb2">
-                    {this.state.efforts.map(listEffort)}
-                </blockquote>
+                <hr className="b--dark-blue"/>
+                <div className="mt3 pt3">
+                    <blockquote className="w-40 center black-90 bl bw2 b--dark-blue mb2">
+                        {this.state.efforts.map(listEffort)}
+                    </blockquote>
+                </div>
                 <div className="mt3">
                     <Link className="f3 no-underline black hover-bg-moon-gray mb3 mv2" to="/efforts/new">New Effort</Link>
                 </div>

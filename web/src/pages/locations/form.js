@@ -1,6 +1,7 @@
 const React = require('react')
 const {Link, Redirect} = require('react-router')
 const xhr = require('xhr')
+const TextField = require('../../components/text-field')
 
 const LocationForm = React.createClass({
     getInitialState() {
@@ -60,22 +61,15 @@ const LocationForm = React.createClass({
                     : null}
                 <h3 className="f1 fw1">{formState + ' '}
                     Location</h3>
-                <hr/>
+                <hr className="b--dark-blue"/>
                 <form onSubmit={this.handleSubmit}>
                     <div>
-                        <label className="db">Location Name</label>
-                        <input onChange={this.handleChange('name')} value={this.state.name} type="text" placeholder="Location Name"/>
+                        <TextField label="Location Name" value={this.state.name} onChange={this.handleChange('name')}/>
+                        <TextField label="Latitude" value={this.state.lat} onChange={this.handleChange('lat')}/>
+                        <TextField label="Longitude" value={this.state.lng} onChange={this.handleChange('lng')}/>
                     </div>
                     <div>
-                        <label className="db pt2">Latitude</label>
-                        <input onChange={this.handleChange('lat')} value={this.state.lat} type="text" placeholder="Latitude"/>
-                    </div>
-                    <div>
-                        <label className="db pt2">Longitude</label>
-                        <input onChange={this.handleChange('lng')} value={this.state.lng} type="text" placeholder="Longitude"/>
-                    </div>
-                    <div>
-                        <button className="mt2 mb3 f6 link dim br2 ba ph4 pv2 mb2 dib black ml2">Save Location</button>
+                        <button className="mt2 mb3 f6 link dim br2 ba pv2 mb2 dib black ph4 dark-blue">Save Location</button>
                     </div>
                 </form>
                 <Link className="no-underline black hover-bg-moon-gray mb4" to="/locations">Return</Link>

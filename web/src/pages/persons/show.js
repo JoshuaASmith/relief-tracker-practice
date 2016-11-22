@@ -1,24 +1,24 @@
 const React = require('react')
 const {Link, Redirect} = require('react-router')
-//const xhr = require('xhr')
+const xhr = require('xhr')
 
 const ShowPerson = React.createClass({
     getInitialState() {
         return {person: {}, removed: false}
     },
     componentDidMount() {
-        this.props.get(this.props.params.id, (err, person) => {
-            if (err)
-                return console.log(err.message)
-            this.setState({person})
-        })
-        // xhr.get('http://localhost:4000/persons/' + this.props.params.id, {
-        //     json: true
-        // }, (err, response, person) => {
+        // this.props.get(this.props.params.id, (err, person) => {
         //     if (err)
         //         return console.log(err.message)
         //     this.setState({person})
         // })
+        xhr.get('http://localhost:4000/persons/' + this.props.params.id, {
+            json: true
+        }, (err, response, person) => {
+            if (err)
+                return console.log(err.message)
+            this.setState({person})
+        })
     },
     handleRemove(e) {
         e.preventDefault()
@@ -44,7 +44,7 @@ const ShowPerson = React.createClass({
                     ? <Redirect to="/persons"/>
                     : null}
                 <h3 className="fw1 f2 tc">Person</h3>
-                <hr className="w-50 tl"/>
+                <hr className="w-50 tl b--dark-blue"/>
                 <div>
                     <h3 className="fw1 f3">{this.state.person.firstName + ' ' + this.state.person.lastName}</h3>
                     <h5 className="fw1">Email: {this.state.person.email}</h5>

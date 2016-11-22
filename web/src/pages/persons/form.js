@@ -1,6 +1,7 @@
 const React = require('react')
 const {Link, Redirect} = require('react-router')
 const xhr = require('xhr')
+const TextField = require('../../components/text-field')
 
 const PersonForm = React.createClass({
     getInitialState() {
@@ -60,26 +61,16 @@ const PersonForm = React.createClass({
                     : null}
                 <h3 className="f1 fw1">{formState + ' '}
                     Person</h3>
-                <hr/>
+                <hr className="b--dark-blue"/>
                 <form onSubmit={this.handleSubmit}>
                     <div>
-                        <label className="db">First Name</label>
-                        <input onChange={this.handleChange('firstName')} value={this.state.firstName} type="text" placeholder="First Name"/>
+                        <TextField label="First Name" value={this.state.firstName} onChange={this.handleChange('firstName')}/>
+                        <TextField label="Last Name" value={this.state.lastName} onChange={this.handleChange('lastName')}/>
+                        <TextField label="Email" value={this.state.email} onChange={this.handleChange('email')}/>
+                        <TextField label="Phone" value={this.state.phone} onChange={this.handleChange('phone')}/>
                     </div>
                     <div>
-                        <label className="db pt2">Last Name</label>
-                        <input onChange={this.handleChange('lastName')} value={this.state.lastName} type="text" placeholder="Last Name"/>
-                    </div>
-                    <div>
-                        <label className="db pt2">Email</label>
-                        <input onChange={this.handleChange('email')} value={this.state.email} type="email" placeholder="email@email.com"/>
-                    </div>
-                    <div>
-                        <label className="db pt2">Phone</label>
-                        <input onChange={this.handleChange('phone')} value={this.state.phone} type="text" placeholder="555-555-5555"/>
-                    </div>
-                    <div>
-                        <button className="mt2 mb3 f6 link dim br2 ba ph4 pv2 mb2 dib black ml2">Save Person</button>
+                        <button className="mt2 mb3 f6 link dim br2 ba ph4 pv2 mb2 dib dark-blue">Save Person</button>
                     </div>
                 </form>
                 <Link className="no-underline black hover-bg-moon-gray mb4" to="/persons">Return</Link>

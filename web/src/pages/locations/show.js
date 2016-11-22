@@ -39,7 +39,7 @@ const ShowLocation = React.createClass({
                     ? <Redirect to="/locations"/>
                     : null}
                 <h3 className="fw1 f2 tc">Location</h3>
-                <hr className="w-50 tl"/>
+                <hr className="w-50 tl b--dark-blue"/>
                 <div className="tc">
                     <h4 className="fw1 f3">{this.state.location.name}</h4>
                     <h5 className="fw1">{this.state.location.lat}</h5>

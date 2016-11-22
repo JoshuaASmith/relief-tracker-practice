@@ -24,8 +24,11 @@ const Locations = React.createClass({
         return (
             <div className="avenir fw1 tc">
                 <h3 className="fw1 f2">Locations</h3>
-                <div className="w-25 center black-90 bl bw2 b--dark-blue mb2">
-                    {this.state.locations.map(listLocations)}
+                <hr className="b--dark-blue"/>
+                <div className="pt3">
+                    <blockquote className="w-40 center black-90 bl bw2 b--dark-blue mb2">
+                        {this.state.locations.map(listLocations)}
+                    </blockquote>
                 </div>
                 <div>
                     <Link className="f3 no-underline black hover-bg-moon-gray mb3" to="/locations/new">New Location</Link>

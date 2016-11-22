@@ -39,7 +39,7 @@ const ShowEffort = React.createClass({
                     ? <Redirect to="/efforts"/>
                     : null}
                 <h3 className="fw1 f2 tc">Effort</h3>
-                <hr className="w-50 tl"/>
+                <hr className="w-50 tl b--dark-blue"/>
                 <div className="">
                     <h3 className="fw1 f3">{this.state.effort.name}</h3>
                     <h5 className="fw1">{this.state.effort.organizationID}</h5>

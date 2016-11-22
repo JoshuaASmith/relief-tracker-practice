@@ -13,7 +13,14 @@ const EffortForm = React.createClass({
             end: '',
             success: false,
             person: [],
-            teamLead: []
+            teamLead: [],
+            location_id: '',
+            locations: [
+                {
+                    id: "-1",
+                    name: "Choose"
+                }
+            ]
         }
     },
     handleChange(field) {
@@ -25,6 +32,9 @@ const EffortForm = React.createClass({
     },
     handleSubmit(e) {
         e.preventDefault()
+        let effort = [].concat(this.state)
+        delete effort.locations
+        delete effort.person
         if (this.state.id) {
             xhr.put('http://localhost:4000/efforts/' + this.state.id, {
                 json: this.state
@@ -62,6 +72,20 @@ const EffortForm = React.createClass({
                 return console.log(err.message)
             this.setState({person})
         })
+        xhr.get('http://localhost:4000/locations', {
+            json: true
+        }, (err, response, body) => {
+            if (err)
+                console.log(err.message)
+            this.setState({
+                locations: [].concat([
+                    {
+                        id: '-1',
+                        name: 'Choose'
+                    }
+                ], body)
+            })
+        })
     },
     render() {
         const listPersons = person => {
@@ -70,6 +94,7 @@ const EffortForm = React.createClass({
         const formState = this.state.id
             ? 'Edit'
             : 'New'
+        //console.log(this.state.locations)
         return (
             <div className="avenir fw2 tc">
                 {this.state.success && this.state.id
@@ -79,7 +104,7 @@ const EffortForm = React.createClass({
                     ? <Redirect to={`/efforts`}/>
                     : null}
                 <h2 className="f1 fw1">{formState + ' '}Relief Effort</h2>
-                <hr/>
+                <hr className="b--dark-blue"/>
                 <form onSubmit={this.handleSubmit}>
                     <div>
                         <label className="db pt2">Name</label>
@@ -112,11 +137,20 @@ const EffortForm = React.createClass({
                     <div>
                         <label className="db pt2">Team Lead</label>
                         <select onChange={this.handleChange('teamLead')} value={this.state.value} type="text">
+                            <option value=""></option>
                             {this.state.person.map(listPersons)}
                         </select>
                     </div>
                     <div>
-                        <button className="mt2 mb3 f6 link dim br2 ba ph4 pv2 mb2 dib black ml2">Save Effort</button>
+                        <label className="db pt2">Location</label>
+                        <select onChange={this.handleChange('location_id')} value={this.state.location_id}>
+                            {this.state.locations.map(location => {
+                                return <option value={location.id}>{location.name}</option>
+                            })}
+                        </select>
+                    </div>
+                    <div>
+                        <button className="mt2 mb3 f6 link dim br2 ba ph4 pv2 mb2 dib dark-blue">Save Effort</button>
                     </div>
                 </form>
                 <div className="ml2">
