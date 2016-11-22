@@ -47,7 +47,9 @@ const ShowLocation = React.createClass({
                 </div>
                 <hr className="w-10"/>
                 <div className="tc">
-                    <Link className="no-underline black hover-bg-moon-gray mb2" to={`/locations/${this.state.location.id}/edit`}>Edit Location</Link>
+                    <button className="f6 fw1 link dim br2 ba ph3 pv2 mt3 mb2 db black center">
+                        <Link className="no-underline black hover-bg-moon-gray mb2" to={`/locations/${this.state.location.id}/edit`}>Edit Location</Link>
+                    </button>
 
                     <button className="f6 fw1 link dim br2 ba ph3 pv2 mt2 mb2 db black center" onClick={this.handleRemove}>Remove Location</button>
                     <Link className="no-underline black hover-bg-moon-gray" to="/locations">Return</Link>

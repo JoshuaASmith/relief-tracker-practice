@@ -9,9 +9,12 @@
       "id": "1"
     },
     {
-      "id": 2,
       "firstName": "Elvis",
-      "lastName": "Pressley"
+      "lastName": "Pressley",
+      "email": "elvis@pressley.com",
+      "phone": "282-485-3853",
+      "success": false,
+      "id": "2"
     },
     {
       "firstName": "Matt",
@@ -33,13 +36,38 @@
       "end": "2008-06/20"
     },
     {
-      "id": 2,
       "name": "Haiti 2016",
       "organizationID": "Seacost",
       "desc": "A trip to Haiti for Hurricane recovery.",
-      "phase": "in-progress",
+      "phase": "started",
       "start": "2016-11-18",
-      "end": "2016-12-02"
+      "end": "2016-12-02",
+      "success": false,
+      "person": [
+        {
+          "firstName": "Bob",
+          "lastName": "Marley",
+          "email": "Bob@marley.com",
+          "phone": "282394958",
+          "success": false,
+          "id": "1"
+        },
+        {
+          "id": 2,
+          "firstName": "Elvis",
+          "lastName": "Pressley"
+        },
+        {
+          "firstName": "Matt",
+          "lastName": "Berninger",
+          "email": "american_mary@4ad.com",
+          "phone": "307-222-7777",
+          "success": false,
+          "id": "rks8e1pbe"
+        }
+      ],
+      "teamLead": "Matt Berninger",
+      "id": "2"
     },
     {
       "id": 3,

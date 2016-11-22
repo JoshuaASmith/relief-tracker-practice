@@ -17,7 +17,7 @@ const Efforts = React.createClass({
     },
     render() {
         const listEffort = effort => {
-            return <li className="list" key={effort.id}>
+            return <li className="list mv2" key={effort.id}>
                 <Link className="no-underline black hover-bg-moon-gray" to={`/efforts/${effort.id}/show`}>{effort.name}</Link>
             </li>
         }

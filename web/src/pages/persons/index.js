@@ -21,7 +21,7 @@ const Persons = React.createClass({
     },
     render() {
         const listPerson = person => {
-            return <li className="list" key={person.id}>
+            return <li className="list mv2" key={person.id}>
                 <Link className="no-underline black hover-bg-moon-gray" to={`/persons/${person.id}/show`}>{person.firstName + ' ' + person.lastName}</Link>
             </li>
         }

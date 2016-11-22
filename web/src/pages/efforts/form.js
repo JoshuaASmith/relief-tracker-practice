@@ -11,7 +11,9 @@ const EffortForm = React.createClass({
             phase: '',
             start: '',
             end: '',
-            success: false
+            success: false,
+            person: [],
+            teamLead: []
         }
     },
     handleChange(field) {
@@ -53,8 +55,18 @@ const EffortForm = React.createClass({
                 this.setState(effort)
             })
         }
+        xhr.get('http://localhost:4000/persons/', {
+            json: true
+        }, (err, response, person) => {
+            if (err)
+                return console.log(err.message)
+            this.setState({person})
+        })
     },
     render() {
+        const listPersons = person => {
+            return <option key={person.id} value={person.firstName + ' ' + person.lastName}>{person.firstName + ' ' + person.lastName}</option>
+        }
         const formState = this.state.id
             ? 'Edit'
             : 'New'
@@ -84,9 +96,9 @@ const EffortForm = React.createClass({
                     <div>
                         <label className="db pt2">Phase</label>
                         <select onChange={this.handleChange('phase')} value={this.state.phase} type="text" placeholder=" ">
-                            <option value="in-planning">in-planning</option>
-                            <option value="completed">Completed</option>
                             <option value="started">Started</option>
+                            <option value="in-planning">in-progress</option>
+                            <option value="completed">Completed</option>
                         </select>
                     </div>
                     <div>
@@ -96,6 +108,12 @@ const EffortForm = React.createClass({
                     <div>
                         <label className="db pt2">End</label>
                         <input onChange={this.handleChange('end')} value={this.state.end} type="date" placeholder="Date"/>
+                    </div>
+                    <div>
+                        <label className="db pt2">Team Lead</label>
+                        <select onChange={this.handleChange('teamLead')} value={this.state.value} type="text">
+                            {this.state.person.map(listPersons)}
+                        </select>
                     </div>
                     <div>
                         <button className="mt2 mb3 f6 link dim br2 ba ph4 pv2 mb2 dib black ml2">Save Effort</button>

@@ -17,7 +17,7 @@ const Locations = React.createClass({
     },
     render() {
         const listLocations = location => {
-            return <li className="list" key={location.id}>
+            return <li className="list mv2" key={location.id}>
                 <Link className="no-underline black hover-bg-moon-gray " to={`/locations/${location.id}/show`}>{location.name}</Link>
             </li>
         }

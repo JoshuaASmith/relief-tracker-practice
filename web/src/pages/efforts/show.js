@@ -40,13 +40,17 @@ const ShowEffort = React.createClass({
                     : null}
                 <h3 className="fw1 f2 tc">Effort</h3>
                 <hr className="w-50 tl"/>
-                <div>
-                    <h5 className="fw1 f3">{this.state.effort.name}</h5>
+                <div className="">
+                    <h3 className="fw1 f3">{this.state.effort.name}</h3>
                     <h5 className="fw1">{this.state.effort.organizationID}</h5>
                     <h5 className="fw1">{this.state.effort.desc}</h5>
+                    <h5 className="fw1">{this.state.effort.start + ' - '}{this.state.effort.end}</h5>
+                    <h5 className="fw1">Team Lead: {this.state.effort.teamLead}</h5>
                 </div>
                 <hr className="w-10"/>
-                <Link className="no-underline black hover-bg-moon-gray" to={`/efforts/${this.state.effort.id}/edit`}>Edit Effort</Link>
+                <button className="f6 fw1 link dim br2 ba ph3 pv2 mt3 mb2 db black center">
+                    <Link className="no-underline black hover-bg-moon-gray mb2" to={`/efforts/${this.state.effort.id}/edit`}>Edit Effort</Link>
+                </button>
                 <button className="f6 fw1 link dim br2 ba ph3 pv2 mt2 mb2 db black center" onClick={this.handleRemove}>Remove Effort</button>
                 <Link className="no-underline black hover-bg-moon-gray" to="/efforts">Return</Link>
             </div>
